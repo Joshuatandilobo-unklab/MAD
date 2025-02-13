@@ -1,118 +1,80 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+//1. import component react-native sebagai core untuk kita pakai
+import {Text,View, StyleSheet} from 'react-native'
+//2. buat component
+// component adalaah function yang return jsx = extended dari javascript tujuan mempermudah kita mmembuat mobile kareana mirip web
+// arrow function = modern javascript sintax
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    //jsx
+    <View style={styles.josh}>
+      <Text style={styles.title}>hello world virgilio tambun </Text>
+    <View style={styles.container}>
     </View>
-  );
+    <Text style={styles.ko}>hello joshua tandilobo</Text>
+    </View>
+    
+  )
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+//3. export component untuk memanggil di tempat lain
+export default App
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
 
+
+//4.styling
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
-export default App;
+  josh:{
+    
+  
+    margin:20 ,// jarak margin dengan komponen luar nya
+    borderRadius: 20, // ketajaman radius merubah k
+  },
+
+  ko: {
+    fontSize: 50, // properti angka
+    fontWeight: '800', // string
+    color: 'black', // bisa juga pakai hex #
+    textAlign: 'center' // untuk membuat posisi text sesuai kemauan
+
+
+  },
+
+  container:{
+    backgroundColor: 'cyan',
+    borderColor: 'black', // border
+    borderWidth: 5, // ketebalan border
+    padding: 20, // jarak anatara text dengan border
+    margin:20 ,// jarak margin dengan komponen luar nya
+    borderRadius: 20, // ketajaman radius merubah k
+
+  },
+  title:{
+    fontSize: 50, // properti angka
+    fontWeight: '800', // string
+    color: 'pink', // bisa juga pakai hex #
+    textAlign: 'center' // untuk membuat posisi text sesuai kemauan
+  }
+}) // untuk menerima objek {}
+//cara styling componen
+//ini semua satu komponen 
+
+//hari ini belaajr sebebrapa banyak componen di react native lewat text book the basic di react native
+//1.core component and native component
+// native = componen asli 
+// native komponen di buat mengguanakn iamgeview untuk gambar 
+// untuk text pake textview
+// backgorung putih juga komponen di android = viewgroup
+//ini tidak di pakai
+//torang akan pakai komponen dari react native
+//container = wadah untuk menampung komponen yang ada di dalam nya menggunakan <view>
+//<text> = untuk return text
+//gambar <image>
+//text input <textinput>
+//scroolview, stylesheet = kayak css stylig nya manual
+// ini semua bisa di pakai buat buat app
+// alt arrow untuk pindahkan code
+//.tittle untuk mengatur ukuran teks
+//margin,border,padding
