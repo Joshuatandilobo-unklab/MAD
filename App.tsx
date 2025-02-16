@@ -1,80 +1,94 @@
-//1. import component react-native sebagai core untuk kita pakai
-import {Text,View, StyleSheet} from 'react-native'
-//2. buat component
-// component adalaah function yang return jsx = extended dari javascript tujuan mempermudah kita mmembuat mobile kareana mirip web
-// arrow function = modern javascript sintax
+import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
 
 const App = () => {
   return (
-    //jsx
-    <View style={styles.josh}>
-      <Text style={styles.title}>hello world virgilio tambun </Text>
-    <View style={styles.container}>
+    <View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={Styles.container}>
+          <Text style={Styles.title}> hallo bang joshua tandilobo</Text>
+        </View>
+        <View style={Styles.sub1}>
+          <Text style={Styles.title1}> hallo teman teman</Text>
+        </View>
+        <Text style={Styles.subTitle1}>Image From URI</Text>
+        <Image
+          style={Styles.img1}
+          source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}
+        />
+        <Text style={Styles.subTitle}>Image From Local Directory</Text>
+        <Image style={Styles.img2} source={require('./Assets/a.png')} />
+        <Text style={Styles.subTitle}>Image From Base64</Text>
+        <Image
+          style={Styles.img1}
+          source={{
+            uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+          }}
+        />
+      </ScrollView>
     </View>
-    <Text style={styles.ko}>hello joshua tandilobo</Text>
-    </View>
-    
-  )
-}
+  );
+};
 
-//3. export component untuk memanggil di tempat lain
-export default App
+export default App;
 
-
-
-
-//4.styling
-const styles = StyleSheet.create({
-
-  josh:{
-    
-  
-    margin:20 ,// jarak margin dengan komponen luar nya
-    borderRadius: 20, // ketajaman radius merubah k
+const Styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'pink',
+    borderColor: 'black',
+    borderWidth: 10,
+    padding: 20,
+    margin: 20,
+    borderRadius: 10,
   },
 
-  ko: {
-    fontSize: 50, // properti angka
-    fontWeight: '800', // string
-    color: 'black', // bisa juga pakai hex #
-    textAlign: 'center' // untuk membuat posisi text sesuai kemauan
-
-
+  title: {
+    fontSize: 50,
+    fontWeight: '800',
+    color: 'yellow',
+    textAlign: 'center',
   },
 
-  container:{
-    backgroundColor: 'cyan',
-    borderColor: 'black', // border
-    borderWidth: 5, // ketebalan border
-    padding: 20, // jarak anatara text dengan border
-    margin:20 ,// jarak margin dengan komponen luar nya
-    borderRadius: 20, // ketajaman radius merubah k
-
+  sub1: {
+    backgroundColor: 'black',
+    borderColor: 'orange',
+    borderWidth: 10,
+    padding: 20,
+    margin: 50,
+    borderRadius: 10,
   },
-  title:{
-    fontSize: 50, // properti angka
-    fontWeight: '800', // string
-    color: 'pink', // bisa juga pakai hex #
-    textAlign: 'center' // untuk membuat posisi text sesuai kemauan
-  }
-}) // untuk menerima objek {}
-//cara styling componen
-//ini semua satu komponen 
 
-//hari ini belaajr sebebrapa banyak componen di react native lewat text book the basic di react native
-//1.core component and native component
-// native = componen asli 
-// native komponen di buat mengguanakn iamgeview untuk gambar 
-// untuk text pake textview
-// backgorung putih juga komponen di android = viewgroup
-//ini tidak di pakai
-//torang akan pakai komponen dari react native
-//container = wadah untuk menampung komponen yang ada di dalam nya menggunakan <view>
-//<text> = untuk return text
-//gambar <image>
-//text input <textinput>
-//scroolview, stylesheet = kayak css stylig nya manual
-// ini semua bisa di pakai buat buat app
-// alt arrow untuk pindahkan code
-//.tittle untuk mengatur ukuran teks
-//margin,border,padding
+  title1: {
+    fontSize: 50,
+    fontWeight: '800',
+    color: 'cyan',
+    textAlign: 'center',
+  },
+  subTitle: {
+    fontSize: 30,
+    fontWeight: '700',
+
+    color: 'pink',
+    padding: 30,
+    textAlign: 'center',
+  },
+
+  subTitle1: {
+    fontSize: 30,
+    fontWeight: '700',
+    marginLeft: 80,
+    marginBottom: 10,
+    color: 'pink',
+  },
+
+  img1: {
+    marginLeft: 100,
+    height: 200,
+    width: 200,
+  },
+
+  img2: {
+    marginLeft: 100,
+    height: 200,
+    width: 200,
+  },
+});
