@@ -1,14 +1,35 @@
-import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
+import React from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 
 const App = () => {
   return (
-    <View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <TextInput
+        style={Styles.input}
+        placeholder="enter your email"></TextInput>
+      <TextInput
+        style={Styles.input}
+        placeholder="enter your password"></TextInput>
+      <TouchableOpacity style={Styles.button} activeOpacity={0.5}>
+        <Text style={Styles.buttontext}> submit</Text>
+      </TouchableOpacity>
+      <View>
+        <View style={Styles.tandi}>
+          <Text style={Styles.bochi}> hallo nijika bini gweh</Text>
+        </View>
         <View style={Styles.container}>
           <Text style={Styles.title}> hallo bang joshua tandilobo</Text>
         </View>
         <View style={Styles.sub1}>
-          <Text style={Styles.title1}> hallo teman teman</Text>
+          <Text style={Styles.title1}> hallo kako pe coding tidak jadi</Text>
         </View>
         <Text style={Styles.subTitle1}>Image From URI</Text>
         <Image
@@ -24,8 +45,8 @@ const App = () => {
             uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
           }}
         />
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -49,8 +70,8 @@ const Styles = StyleSheet.create({
   },
 
   sub1: {
-    backgroundColor: 'black',
-    borderColor: 'orange',
+    backgroundColor: 'navy',
+    borderColor: 'blue',
     borderWidth: 10,
     padding: 20,
     margin: 50,
@@ -60,7 +81,7 @@ const Styles = StyleSheet.create({
   title1: {
     fontSize: 50,
     fontWeight: '800',
-    color: 'cyan',
+    color: 'red',
     textAlign: 'center',
   },
   subTitle: {
@@ -91,4 +112,53 @@ const Styles = StyleSheet.create({
     height: 200,
     width: 200,
   },
+
+  tandi: {
+    backgroundColor: 'pink',
+    borderColor: 'black',
+    borderWidth: 10,
+    padding: 20,
+    margin: 40,
+    borderRadius: 10,
+  },
+
+  bochi: {
+    fontSize: 50,
+    fontWeight: '800',
+    color: 'yellow',
+    textAlign: 'center',
+  },
+
+  input: {
+    borderWidth: 2,
+    borderBlockColor: 'black',
+    margin: 20,
+    padding: 20,
+    fontSize: 30,
+    borderRadius: 10,
+  },
+
+  button: {
+    borderWidth: 2,
+    borderBlockColor: 'blue',
+    margin: 20,
+    padding: 20,
+    fontSize: 30,
+    borderRadius: 10,
+    color: 'blue',
+  },
+
+  buttontext: {
+    color: 'blue',
+    fontSize: 20,
+    textAlign: 'center',
+  },
 });
+
+//1.text input dan button
+//text input = bisa menginput text di dalam web/app
+//input lebih ke border
+//view lebih ke bacgroudn colro
+//amper semua kompnenn ada padding
+//excersice dua bking satu screen baru isi biodata cv kita
+//bkig file baru
