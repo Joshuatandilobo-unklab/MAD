@@ -1,29 +1,42 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 const Flexbox = () => {
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.container}>
-        <View style={styles.redcontainer}></View>
-        <View style={styles.greencontainer}></View>
-        <View style={styles.pinkcontainer}></View>
-        <View style={styles.bluecontainer}></View>
-      </View>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.mainContainer}>
+        <View style={styles.container}>
+          <View style={styles.redcontainer}></View>
+          <View style={styles.greencontainer}></View>
+          <View style={styles.pinkcontainer}></View>
+          <View style={styles.bluecontainer}></View>
+        </View>
 
-      <View style={styles.ccontainer}>
-        <View style={styles.redcontainer}></View>
-        <View style={styles.greencontainer}></View>
-        <View style={styles.pinkcontainer}></View>
-        <View style={styles.bluecontainer}></View>
+        <View style={styles.ccontainer}>
+          <View style={styles.redcontainer}></View>
+          <View style={styles.greencontainer}></View>
+          <View style={styles.pinkcontainer}></View>
+          <View style={styles.bluecontainer}></View>
+        </View>
+
+        <View style={styles.cccontainer}>
+          <View style={styles.redcontainer}></View>
+          <View style={styles.greencontainer}></View>
+          <View style={styles.pinkcontainer}></View>
+          <View style={styles.bluecontainer}></View>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 export default Flexbox;
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flexGrow: 1,
+  },
   mainContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -31,11 +44,11 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: '#B3D8A8',
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     width: '100%',
-    height: '55%',
+    height: 300,
   },
 
   ccontainer: {
@@ -44,7 +57,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     width: '100%',
-    height: '55%',
+    height: 300,
+  },
+
+  cccontainer: {
+    backgroundColor: '#690B22',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width: '100%',
+    height: 300,
   },
 
   redcontainer: {
