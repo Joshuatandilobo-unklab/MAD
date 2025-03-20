@@ -154,6 +154,22 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+export const styles = StyleSheet.create({
+  button: color => ({
+    width: '100%',
+    height: 50,
+    backgroundColor: '#FF6600',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    marginTop: 10,
+  }),
+  buttonText: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+});
 
 //1.text input dan button
 //text input = bisa menginput text di dalam web/app
