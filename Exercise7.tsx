@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, FlatList} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import axios from 'axios';
 import UserCard1 from './components/User Card/UserCard1';
 import UserCard2 from './components/User Card/UserCard2';
@@ -20,8 +20,7 @@ const Exercise7 = () => {
   useEffect(() => {
     axios
       .get('https://reqres.in/api/users?per_page=12')
-      .then(res => setUsers(res.data.data))
-      .catch(err => console.error(err));
+      .then(res => setUsers(res.data.data));
   }, []);
 
   const renderUserCard = (item, index) => {
@@ -50,17 +49,21 @@ const Exercise7 = () => {
         return <UserCard11 user={item} />;
       case 11:
         return <UserCard12 user={item} />;
+      default:
+        return null;
     }
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>User List</Text>
-      <FlatList
-        data={users}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item, index}) => renderUserCard(item, index)}
-      />
+      <ScrollView>
+        {users.map((user, index) => (
+          <View key={user.id} style={styles.cardContainer}>
+            {renderUserCard(user, index)}
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 };
@@ -77,5 +80,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 30,
+  },
+  cardContainer: {
+    marginBottom: 20,
   },
 });
